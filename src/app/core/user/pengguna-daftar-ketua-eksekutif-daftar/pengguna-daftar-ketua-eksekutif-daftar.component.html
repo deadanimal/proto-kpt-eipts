@@ -1,0 +1,249 @@
+<div class="header pb-6">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <div class="col-lg-6 col-7">
+          <h6 class="h2 text-dark d-inline-block mb-0">Pendaftaran</h6>
+
+          <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+              <li class="breadcrumb-item">
+                <a href="javascript:void(0)">
+                  <i class="fas fa-clipboard-list text-dark"> </i>
+                </a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="javascript:void(0)" class="text-dark">
+                  Ketua Eksekutif
+                </a>
+              </li>
+              <li aria-current="page" class="breadcrumb-item active">
+                Pendaftaran
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt--6">
+  <div class="row">
+    <div class="col-xl-12">
+      <div class="card">
+        <div class="card-header bg-secondary">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <h5 class="h3 m-0">Carian</h5>
+            </div>
+            <div class="col-md-6 text-right">
+              <button
+                class="btn btn-success"
+                type="button"
+                (click)="successSwal('dieksport')"
+              >
+                Eksport
+              </button>
+              <button
+                class="btn btn-primary"
+                type="button"
+                (click)="successSwal('dimuatnaik')"
+              >
+                Muat Naik
+              </button>
+              <button
+                class="btn btn-default"
+                type="button"
+                (click)="successSwal('ditambah')"
+              >
+                Tambah
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Nama</label>
+
+                <input
+                  class="form-control"
+                  placeholder="Tulis disini..."
+                  type="text"
+                />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">No. Tel</label>
+
+                <input
+                  class="form-control"
+                  placeholder="111111001111"
+                  type="number"
+                />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">No. Kad Pengenalan</label>
+
+                <input
+                  class="form-control"
+                  placeholder="111111001111"
+                  type="number"
+                />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Jantina</label>
+
+                <select class="form-control">
+                  <option hidden selected>Sila Pilih</option>
+                  <option value="1">Lelaki</option>
+                  <option value="2">Perempuan</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Umur</label>
+
+                <input class="form-control" placeholder="00" type="number" />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Kelayakan</label>
+
+                <select class="form-control">
+                  <option hidden selected>Sila Pilih</option>
+                  <option value="1">Doktor Falsafah</option>
+                  <option value="2">Ijazah Sarjana</option>
+                  <option value="3">Ijazah Sarjana Muda</option>
+                  <option value="4">Diploma</option>
+                  <option value="5">Sijil</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Pencapaian</label>
+
+                <input
+                  class="form-control"
+                  placeholder="Tulis disini..."
+                  type="text"
+                />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">No. Rujukan</label>
+
+                <input
+                  class="form-control"
+                  placeholder="Tulis disini..."
+                  type="text"
+                />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Status Pendapatan (RM)</label>
+
+                <input class="form-control" placeholder="0000" type="number" />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Jawatan</label>
+
+                <input
+                  class="form-control"
+                  placeholder="Tulis disini..."
+                  type="text"
+                />
+              </div>
+            </div>
+            <div class="col-xl-12 text-right">
+              <button
+                class="btn btn-success"
+                (click)="successSwal('disimpan')"
+              >
+                Simpan
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-12">
+      <div class="card">
+        <div class="card-header bg-secondary">
+          <div class="row align-items-center">
+            <div class="col">
+              <h5 class="h3 m-0">Muat Naik Dokumen</h5>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="dropzone dropzone-multiple" id="dropzone-multiple">
+            <div class="fallback">
+              <div class="custom-file">
+                <input
+                  class="custom-file-input"
+                  id="customFileUploadMultiple"
+                  multiple="multiple"
+                  type="file"
+                />
+
+                <label class="custom-file-label" for="customFileUploadMultiple">
+                  Pilih Fail
+                </label>
+              </div>
+            </div>
+
+            <ul
+              class="
+                dz-preview dz-preview-multiple
+                list-group list-group-lg list-group-flush
+              "
+            >
+              <li class="list-group-item px-0">
+                <div class="row align-items-center">
+                  <div class="col-auto">
+                    <div class="avatar">
+                      <img
+                        alt="..."
+                        class="avatar-img rounded"
+                        data-dz-thumbnail=""
+                        src=""
+                      />
+                    </div>
+                  </div>
+
+                  <div class="col ml--3">
+                    <h4 class="mb-1" data-dz-name="">...</h4>
+
+                    <p class="small text-muted mb-0" data-dz-size="">...</p>
+                  </div>
+
+                  <div class="col-auto">
+                    <button data-dz-remove="true" class="btn btn-danger btn-sm">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

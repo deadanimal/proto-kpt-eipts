@@ -1,0 +1,199 @@
+<div class="header pb-6">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <div class="col-lg-6 col-7">
+          <h6 class="h2 text-dark d-inline-block mb-0">
+            Pengurusan Berkenaan Syarikat
+          </h6>
+
+          <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+              <li class="breadcrumb-item">
+                <a href="javascript:void(0)">
+                  <i class="fas fa-building text-dark"> </i>
+                </a>
+              </li>
+              <!-- <li class="breadcrumb-item">
+                      <a href="javascript:void(0)" class="text-dark"> Lease Admin </a>
+                    </li>
+                    <li aria-current="page" class="breadcrumb-item active">
+                      Lease Admin
+                    </li> -->
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt--6">
+  <div class="row">
+    <div class="col-xl-12">
+      <div class="card">
+        <div class="card-header bg-secondary">
+          <div class="row align-items-center">
+            <div class="col">
+              <h5 class="h3 mb-0">Berkenaan Syarikat</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="box1">
+                <div class="row">
+                  <div class="col-12 mt-3">
+                    <a class="text-white"><b> 350 </b></a>
+                  </div>
+                  <div class="col-12 mb-3">
+                    <a class="text-white"> Penyertaan Ekuiti </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="box2">
+                <div class="row">
+                  <div class="col-12 mt-3">
+                    <a class="text-white"><b> 877 </b></a>
+                  </div>
+                  <div class="col-12 mb-3">
+                    <a class="text-white"> Modal Terbitan </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="col-lg-6 mt-3">
+              <div class="box3">
+                <div class="row">
+                  <div class="col-12 mt-3">
+                    <a class="text-white"><b> 678 </b></a>
+                  </div>
+                  <div class="col-12 mb-3">
+                    <a class="text-white"> Syarikat Berbayar </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="col-lg-6 mt-3">
+              <div class="box4">
+                <div class="row">
+                  <div class="col-12 mt-3">
+                    <a class="text-white"><b> 123 </b></a>
+                  </div>
+                  <div class="col-12 mb-3">
+                    <a class="text-white"> Pengumpulan Audit </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-12">
+      <div class="card">
+        <div class="card-header bg-secondary">
+          <div class="row align-items-center">
+            <div class="col">
+              <h5 class="h3 m-0">Pengumpulan Maklumat Kewangan Syarikat</h5>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="chart">
+            <div class="amchart" id="chartdivpegawaipengurusansyarikat1"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-12">
+      <div class="card">
+        <div class="card-header bg-secondary">
+          <div class="row align-items-center">
+            <div class="col">
+              <h5 class="h3 m-0">Permohonan Pertukaran Syarikat</h5>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-xl-6">
+                <div class="form-group">
+                  <label class="form-control-label">Nama Syarikat</label>
+
+                  <input
+                    class="form-control"
+                    placeholder="Tulis disini..."
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="col-xl-6">
+                <div class="form-group">
+                  <label class="form-control-label">Modal Terbitan</label>
+
+                  <input
+                    class="form-control"
+                    placeholder="Tulis disini..."
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="col-xl-6">
+                <div class="form-group">
+                  <label class="form-control-label">Amaun Dana</label>
+
+                  <input
+                    class="form-control"
+                    placeholder="Tulis disini..."
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="col-xl-6">
+                <div class="form-group">
+                  <label class="form-control-label">Penyertaan Ekuiti</label>
+
+                  <input
+                    class="form-control"
+                    placeholder="Tulis disini..."
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="col-xl-12">
+                <div class="form-group">
+                  <label class="form-control-label">MOA</label>
+
+                  <input
+                    class="form-control"
+                    placeholder="Tulis disini..."
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="col-xl-12 text-right">
+                <button
+                  class="btn btn-success"
+                  (click)="successSwal('disimpan')"
+                >
+                  Simpan
+                </button>
+                <input class="btn btn-danger" type="reset" value="Set Semula" />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

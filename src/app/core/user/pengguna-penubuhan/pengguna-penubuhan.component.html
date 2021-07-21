@@ -1,0 +1,1339 @@
+<div class="header pb-6">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <div class="col-lg-6 col-7">
+          <h6 class="h2 text-dark d-inline-block mb-0">Penubuhan</h6>
+
+          <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+              <li class="breadcrumb-item">
+                <a href="javascript:void(0)">
+                  <i class="fab fa-wpforms text-dark"> </i>
+                </a>
+              </li>
+              <!-- <li class="breadcrumb-item">
+                <a href="javascript:void(0)" class="text-dark"> Lease Admin </a>
+              </li>
+              <li aria-current="page" class="breadcrumb-item active">
+                Lease Admin
+              </li> -->
+            </ol>
+          </nav>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-6">
+          <div class="card card-stats">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <h5 class="card-title text-uppercase text-muted mb-0">
+                    Jumlah Bilangan Penubuhan IPTS yang Disahkan
+                  </h5>
+
+                  <span class="h2 font-weight-bold mb-0"> 437 </span>
+                </div>
+
+                <div class="col-auto">
+                  <div
+                    class="
+                      icon icon-shape
+                      bg-gradient-red
+                      text-white
+                      rounded-circle
+                      shadow
+                    "
+                  >
+                    <i class="fas fa-school"> </i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-6">
+          <div class="card card-stats">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <h5 class="card-title text-uppercase text-muted mb-0">
+                    Permohonan yang Belum Selesai
+                  </h5>
+
+                  <span class="h2 font-weight-bold mb-0"> 56 </span>
+                </div>
+
+                <div class="col-auto">
+                  <div
+                    class="
+                      icon icon-shape
+                      bg-gradient-orange
+                      text-white
+                      rounded-circle
+                      shadow
+                    "
+                  >
+                    <i class="fas fa-edit"> </i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt--6">
+  <div class="row">
+    <div class="col-xl-12">
+      <div class="card">
+        <div class="card-header bg-secondary">
+          <div class="row align-items-center">
+            <div class="col-12">
+              <h5 class="h3 m-0">Maklumat dan Pengumuman</h5>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <a
+            class="btn btn-block btn-default"
+            type="button"
+            href="https://www.moe.gov.my/dasar/1194-akta-institusi-pendidikan-tinggi-swasta-1996-akta-555/file"
+            target="_blank"
+          >
+            Perlembagaan IPTS
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-12">
+      <div class="card">
+        <!-- <div class="card-header bg-secondary">
+            <div class="row align-items-center">
+              <div class="col-7">
+                <h5 class="h3 m-0">Work Order</h5>
+              </div>
+            </div>
+          </div> -->
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <button
+                class="btn btn-block btn-default"
+                type="button"
+                (click)="modaltubuhipts(tubuhipts)"
+              >
+                Permohonan Penubuhan IPTS
+              </button>
+            </div>
+            <div class="col">
+              <button
+                class="btn btn-block btn-default"
+                type="button"
+                (click)="modalnaiktarafipts(tarafipts)"
+              >
+                Permohonan Naik Taraf IPTS
+              </button>
+            </div>
+            <div class="col">
+              <button
+                class="btn btn-block btn-default"
+                type="button"
+                (click)="modaltubuhcawang(tubuhcawang)"
+              >
+                Permohonan Penubuhan Cawangan
+              </button>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col">
+              <button
+                class="btn btn-block btn-default"
+                type="button"
+                (click)="modaltubuhwilayah(tubuhwilayah)"
+              >
+                Permohonan Penubuhan Pusat Wilayah
+              </button>
+            </div>
+            <div class="col">
+              <button
+                class="btn btn-block btn-default"
+                type="button"
+                (click)="modalgabungipts(gabungipts)"
+              >
+                Permohonan Penggabungan IPTS
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-12">
+      <div class="card">
+        <div class="card-header bg-secondary">
+          <div class="row align-items-center">
+            <div class="col">
+              <h5 class="h3 m-0">Jumlah Lokasi dan Cawangan yang Sedia Ada</h5>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="chart">
+            <div class="amchart" id="chartdivpenggunapenubuhan1"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #tubuhipts>
+  <div class="modal-header bg-default">
+    <h6 class="modal-title text-white my-auto" id="modal-title-default">
+      Permohonan Penubuhan IPTS
+    </h6>
+
+    <button
+      aria-label="Close"
+      class="close"
+      data-dismiss="modal"
+      type="button"
+      (click)="modalRef.hide()"
+    >
+      <span aria-hidden="true" class="text-white my-auto"> × </span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <mat-horizontal-stepper #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel> Maklumat Pemohon </ng-template>
+          <!-- <h5 class="h3 mb-3">Part 1</h5> -->
+          <div class="row">
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Nama Pemohon</label>
+
+                <input
+                  class="form-control"
+                  placeholder="Tulis disini..."
+                  type="text"
+                />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">No. Kad Pengenalan</label>
+
+                <input
+                  class="form-control"
+                  placeholder="111111001111"
+                  type="number"
+                />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Kelayakan</label>
+
+                <select class="form-control">
+                  <option hidden selected>Sila Pilih</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Kategori IPT</label>
+
+                <select class="form-control">
+                  <option hidden selected>Sila Pilih</option>
+                  <option value="1">Kolej</option>
+                  <option value="2">Kolej Universiti</option>
+                  <option value="3">Universiti</option>
+                  <option value="1">Kampus</option>
+                  <option value="3">Cawangan Luar Negara</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">No. Rujukan Berdaftar</label>
+
+                <input
+                  class="form-control"
+                  placeholder="Tulis disini..."
+                  type="text"
+                />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Tarikh Berdaftar</label>
+
+                <input
+                  class="form-control"
+                  placeholder="Tulis disini..."
+                  type="date"
+                />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">No. Faks</label>
+
+                <input
+                  class="form-control"
+                  placeholder="000000000"
+                  type="number"
+                />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">No. Tel</label>
+
+                <input
+                  class="form-control"
+                  placeholder="0000000000"
+                  type="number"
+                />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Emel</label>
+
+                <input
+                  class="form-control"
+                  placeholder="Tulis disini..."
+                  type="email"
+                />
+              </div>
+            </div>
+          </div>
+          <div>
+            <button class="btn btn-default" mat-button matStepperNext>
+              Seterusnya
+            </button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel> Dokumen Pemohon </ng-template>
+          <div class="row">
+            <div class="col-xl-12">
+              <div class="form-group">
+                <label class="form-control-label"
+                  >Muat Naik Dokumen Pendaftaran (jika Ada)
+                </label>
+
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" lang="en" />
+                  <label class="custom-file-label">Pilih fail</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-12">
+              <div class="form-group">
+                <label class="form-control-label"
+                  >Muat Naik Dokumen Utama
+                </label>
+
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" lang="en" />
+                  <label class="custom-file-label">Pilih fail</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-12">
+              <div class="form-group">
+                <label class="form-control-label">Sijil Kelayakan</label>
+
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" lang="en" />
+                  <label class="custom-file-label">Pilih fail</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-12">
+              <div class="form-group">
+                <label class="form-control-label">Jenis Dokumen</label>
+
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" lang="en" />
+                  <label class="custom-file-label">Pilih fail</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button class="btn btn-danger" mat-button matStepperPrevious>
+              Kembali
+            </button>
+            <button
+              class="btn btn-default"
+              mat-button
+              (click)="successSwalModal('disimpan')"
+            >
+              Simpan
+            </button>
+          </div>
+        </form>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+
+  <div class="modal-footer">
+    <!-- <button
+            class="btn btn-success"
+            type="button"
+            (click)="successSwal('saved')"
+          >
+            Save
+          </button> -->
+
+    <button
+      class="btn btn-outline-danger ml-auto"
+      data-dismiss="modal"
+      type="button"
+      (click)="modalRef.hide()"
+    >
+      Tutup
+    </button>
+  </div>
+</ng-template>
+
+<ng-template #tarafipts>
+  <div class="modal-header bg-default">
+    <h6 class="modal-title text-white my-auto" id="modal-title-default">
+      Permohonan Naik Taraf IPTS
+    </h6>
+
+    <button
+      aria-label="Close"
+      class="close"
+      data-dismiss="modal"
+      type="button"
+      (click)="modalRef.hide()"
+    >
+      <span aria-hidden="true" class="text-white my-auto"> × </span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <mat-horizontal-stepper #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel> Maklumat Pemohon </ng-template>
+          <!-- <h5 class="h3 mb-3">Part 1</h5> -->
+          <div class="row">
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Nama Pemohon</label>
+
+                <input
+                  class="form-control"
+                  placeholder="Tulis disini..."
+                  type="text"
+                />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">No. Kad Pengenalan</label>
+
+                <input
+                  class="form-control"
+                  placeholder="111111001111"
+                  type="number"
+                />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Kelayakan</label>
+
+                <select class="form-control">
+                  <option hidden selected>Sila Pilih</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Kategori IPT</label>
+
+                <select class="form-control">
+                  <option hidden selected>Sila Pilih</option>
+                  <option value="1">Kolej</option>
+                  <option value="2">Kolej Universiti</option>
+                  <option value="3">Universiti</option>
+                  <option value="4">Kampus</option>
+                  <option value="5">Cawangan Luar Negara</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">No. Rujukan Berdaftar</label>
+
+                <input
+                  class="form-control"
+                  placeholder="Tulis disini..."
+                  type="text"
+                />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Tarikh Berdaftar</label>
+
+                <input
+                  class="form-control"
+                  placeholder="Tulis disini..."
+                  type="date"
+                />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">No. Faks</label>
+
+                <input
+                  class="form-control"
+                  placeholder="000000000"
+                  type="number"
+                />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">No. Tel</label>
+
+                <input
+                  class="form-control"
+                  placeholder="0000000000"
+                  type="number"
+                />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Emel</label>
+
+                <input
+                  class="form-control"
+                  placeholder="Tulis disini..."
+                  type="email"
+                />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Nama IPTS</label>
+
+                <input
+                  class="form-control"
+                  placeholder="Tulis disini..."
+                  type="text"
+                />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label"
+                  >Syarat Kursus Pengajian</label
+                >
+
+                <select class="form-control">
+                  <option hidden selected>Sila Pilih</option>
+                  <option value="1">Ijazah Sarjana Muda</option>
+                  <option value="2">Kolej Universiti</option>
+                  <option value="3">Diploma Lanjutan</option>
+                  <option value="4">Diploma</option>
+                  <option value="5">Sijil</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Alamat IPTS</label>
+
+                <textarea class="form-control" rows="3"></textarea>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button class="btn btn-default" mat-button matStepperNext>
+              Seterusnya
+            </button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel> Dokumen Pemohon </ng-template>
+          <div class="row">
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label"
+                  >Muat Naik Dokumen Pendaftaran (jika Ada)
+                </label>
+
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" lang="en" />
+                  <label class="custom-file-label">Pilih fail</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label"
+                  >Muat Naik Dokumen Utama
+                </label>
+
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" lang="en" />
+                  <label class="custom-file-label">Pilih fail</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Sijil Kelayakan</label>
+
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" lang="en" />
+                  <label class="custom-file-label">Pilih fail</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Jenis Dokumen</label>
+
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" lang="en" />
+                  <label class="custom-file-label">Pilih fail</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label"
+                  >Dokumen Syarat Pengajian</label
+                >
+
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" lang="en" />
+                  <label class="custom-file-label">Pilih fail</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button class="btn btn-danger" mat-button matStepperPrevious>
+              Kembali
+            </button>
+            <button
+              class="btn btn-default"
+              mat-button
+              (click)="successSwalModal('disimpan')"
+            >
+              Simpan
+            </button>
+          </div>
+        </form>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+
+  <div class="modal-footer">
+    <!-- <button
+            class="btn btn-success"
+            type="button"
+            (click)="successSwal('saved')"
+          >
+            Save
+          </button> -->
+
+    <button
+      class="btn btn-outline-danger ml-auto"
+      data-dismiss="modal"
+      type="button"
+      (click)="modalRef.hide()"
+    >
+      Tutup
+    </button>
+  </div>
+</ng-template>
+
+<ng-template #tubuhcawang>
+  <div class="modal-header bg-default">
+    <h6 class="modal-title text-white my-auto" id="modal-title-default">
+      Maklumat Pemohon
+    </h6>
+
+    <button
+      aria-label="Close"
+      class="close"
+      data-dismiss="modal"
+      type="button"
+      (click)="modalRef.hide()"
+    >
+      <span aria-hidden="true" class="text-white my-auto"> × </span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="form-group">
+          <label class="form-control-label">Nama Pemohon</label>
+
+          <input
+            class="form-control"
+            placeholder="Tulis disini..."
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="col-xl-12">
+        <div class="form-group">
+          <label class="form-control-label">No. Kad Pengenalan</label>
+
+          <input
+            class="form-control"
+            placeholder="111111001111"
+            type="number"
+          />
+        </div>
+      </div>
+      <div class="col-xl-12">
+        <div class="form-group">
+          <label class="form-control-label">Kelayakan</label>
+
+          <select class="form-control">
+            <option hidden selected>Sila Pilih</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-xl-12">
+        <div class="form-group">
+          <label class="form-control-label">Lokasi Cawangan</label>
+
+          <input
+            class="form-control"
+            placeholder="Tulis disini..."
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="col-xl-12">
+        <div class="form-group">
+          <label class="form-control-label">Nama IPTS</label>
+
+          <input
+            class="form-control"
+            placeholder="Tulis disini..."
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="col-xl-12">
+        <div class="form-group">
+          <label class="form-control-label">Tarikh Berdaftar</label>
+
+          <input
+            class="form-control"
+            placeholder="Tulis disini..."
+            type="date"
+          />
+        </div>
+      </div>
+      <div class="col-xl-12">
+        <div class="form-group">
+          <label class="form-control-label">Jumlah Pelajar</label>
+
+          <input class="form-control" placeholder="000" type="number" />
+        </div>
+      </div>
+      <div class="col-xl-12">
+        <div class="form-group">
+          <label class="form-control-label">Syarat Kursus Pengajian</label>
+
+          <select class="form-control">
+            <option hidden selected>Sila Pilih</option>
+            <option value="1">Ijazah Sarjana Muda</option>
+            <option value="2">Kolej Universiti</option>
+            <option value="3">Diploma Lanjutan</option>
+            <option value="4">Diploma</option>
+            <option value="5">Sijil</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-xl-12">
+        <div class="form-group">
+          <label class="form-control-label">No. Rujukan Berdaftar</label>
+
+          <input
+            class="form-control"
+            placeholder="Tulis disini..."
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="col-xl-12">
+        <div class="form-group">
+          <label class="form-control-label">No. Faks</label>
+
+          <input class="form-control" placeholder="000000000" type="number" />
+        </div>
+      </div>
+      <div class="col-xl-12">
+        <div class="form-group">
+          <label class="form-control-label">No. Tel</label>
+
+          <input class="form-control" placeholder="0000000000" type="number" />
+        </div>
+      </div>
+      <div class="col-xl-12">
+        <div class="form-group">
+          <label class="form-control-label">Emel</label>
+
+          <input
+            class="form-control"
+            placeholder="Tulis disini..."
+            type="email"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button
+      class="btn btn-success"
+      type="button"
+      (click)="successSwalModal('disimpan')"
+    >
+      Simpan
+    </button>
+
+    <button
+      class="btn btn-outline-danger ml-auto"
+      data-dismiss="modal"
+      type="button"
+      (click)="modalRef.hide()"
+    >
+      Tutup
+    </button>
+  </div>
+</ng-template>
+
+<ng-template #tubuhwilayah>
+  <div class="modal-header bg-default">
+    <h6 class="modal-title text-white my-auto" id="modal-title-default">
+      Maklumat Pemohon
+    </h6>
+
+    <button
+      aria-label="Close"
+      class="close"
+      data-dismiss="modal"
+      type="button"
+      (click)="modalRef.hide()"
+    >
+      <span aria-hidden="true" class="text-white my-auto"> × </span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="form-group">
+          <label class="form-control-label">Nama Pemohon</label>
+
+          <input
+            class="form-control"
+            placeholder="Tulis disini..."
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="col-xl-12">
+        <div class="form-group">
+          <label class="form-control-label">No. Kad Pengenalan</label>
+
+          <input
+            class="form-control"
+            placeholder="111111001111"
+            type="number"
+          />
+        </div>
+      </div>
+      <div class="col-xl-12">
+        <div class="form-group">
+          <label class="form-control-label">Kelayakan</label>
+
+          <select class="form-control">
+            <option hidden selected>Sila Pilih</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-xl-12">
+        <div class="form-group">
+          <label class="form-control-label">Lokasi Cawangan</label>
+
+          <input
+            class="form-control"
+            placeholder="Tulis disini..."
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="col-xl-12">
+        <div class="form-group">
+          <label class="form-control-label">Nama IPTS</label>
+
+          <input
+            class="form-control"
+            placeholder="Tulis disini..."
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="col-xl-12">
+        <div class="form-group">
+          <label class="form-control-label">Tarikh Berdaftar</label>
+
+          <input
+            class="form-control"
+            placeholder="Tulis disini..."
+            type="date"
+          />
+        </div>
+      </div>
+      <div class="col-xl-12">
+        <div class="form-group">
+          <label class="form-control-label">Jumlah Pelajar</label>
+
+          <input class="form-control" placeholder="000" type="number" />
+        </div>
+      </div>
+      <div class="col-xl-12">
+        <div class="form-group">
+          <label class="form-control-label">Syarat Kursus Pengajian</label>
+
+          <select class="form-control">
+            <option hidden selected>Sila Pilih</option>
+            <option value="1">Ijazah Sarjana Muda</option>
+            <option value="2">Kolej Universiti</option>
+            <option value="3">Diploma Lanjutan</option>
+            <option value="4">Diploma</option>
+            <option value="5">Sijil</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-xl-12">
+        <div class="form-group">
+          <label class="form-control-label">No. Rujukan Berdaftar</label>
+
+          <input
+            class="form-control"
+            placeholder="Tulis disini..."
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="col-xl-12">
+        <div class="form-group">
+          <label class="form-control-label">No. Faks</label>
+
+          <input class="form-control" placeholder="000000000" type="number" />
+        </div>
+      </div>
+      <div class="col-xl-12">
+        <div class="form-group">
+          <label class="form-control-label">No. Tel</label>
+
+          <input class="form-control" placeholder="0000000000" type="number" />
+        </div>
+      </div>
+      <div class="col-xl-12">
+        <div class="form-group">
+          <label class="form-control-label">Emel</label>
+
+          <input
+            class="form-control"
+            placeholder="Tulis disini..."
+            type="email"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button
+      class="btn btn-success"
+      type="button"
+      (click)="successSwalModal('disimpan')"
+    >
+      Simpan
+    </button>
+
+    <button
+      class="btn btn-outline-danger ml-auto"
+      data-dismiss="modal"
+      type="button"
+      (click)="modalRef.hide()"
+    >
+      Tutup
+    </button>
+  </div>
+</ng-template>
+
+<ng-template #gabungipts>
+  <div class="modal-header bg-default">
+    <h6 class="modal-title text-white my-auto" id="modal-title-default">
+      Permohonan Penggabungan IPTS
+    </h6>
+
+    <button
+      aria-label="Close"
+      class="close"
+      data-dismiss="modal"
+      type="button"
+      (click)="modalRef.hide()"
+    >
+      <span aria-hidden="true" class="text-white my-auto"> × </span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <mat-horizontal-stepper #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel> Maklumat Pemohon </ng-template>
+          <!-- <h5 class="h3 mb-3">Part 1</h5> -->
+          <div class="row">
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Nama Pemohon</label>
+
+                <input
+                  class="form-control"
+                  placeholder="Tulis disini..."
+                  type="text"
+                />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">No. Kad Pengenalan</label>
+
+                <input
+                  class="form-control"
+                  placeholder="111111001111"
+                  type="number"
+                />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Kelayakan</label>
+
+                <select class="form-control">
+                  <option hidden selected>Sila Pilih</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Lokasi Cawangan</label>
+
+                <input
+                  class="form-control"
+                  placeholder="Tulis disini..."
+                  type="text"
+                />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">No. Rujukan Berdaftar</label>
+
+                <input
+                  class="form-control"
+                  placeholder="Tulis disini..."
+                  type="text"
+                />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Tarikh Berdaftar</label>
+
+                <input
+                  class="form-control"
+                  placeholder="Tulis disini..."
+                  type="date"
+                />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">No. Faks</label>
+
+                <input
+                  class="form-control"
+                  placeholder="000000000"
+                  type="number"
+                />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">No. Tel</label>
+
+                <input
+                  class="form-control"
+                  placeholder="0000000000"
+                  type="number"
+                />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Emel</label>
+
+                <input
+                  class="form-control"
+                  placeholder="Tulis disini..."
+                  type="email"
+                />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Nama IPTS</label>
+
+                <input
+                  class="form-control"
+                  placeholder="Tulis disini..."
+                  type="text"
+                />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Nama IPTS Lain</label>
+
+                <input
+                  class="form-control"
+                  placeholder="Tulis disini..."
+                  type="text"
+                />
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label"
+                  >Syarat Kursus Pengajian</label
+                >
+
+                <select class="form-control">
+                  <option hidden selected>Sila Pilih</option>
+                  <option value="1">Ijazah Sarjana Muda</option>
+                  <option value="2">Kolej Universiti</option>
+                  <option value="3">Diploma Lanjutan</option>
+                  <option value="4">Diploma</option>
+                  <option value="5">Sijil</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button class="btn btn-default" mat-button matStepperNext>
+              Seterusnya
+            </button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel> Dokumen Pemohon </ng-template>
+          <div class="row">
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label"
+                  >Muat Naik Dokumen Pendaftaran (Jika Ada)
+                </label>
+
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" lang="en" />
+                  <label class="custom-file-label">Pilih fail</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label"
+                  >Muat Naik Dokumen Utama
+                </label>
+
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" lang="en" />
+                  <label class="custom-file-label">Pilih fail</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Sijil Kelayakan</label>
+
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" lang="en" />
+                  <label class="custom-file-label">Pilih fail</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Jenis Dokumen</label>
+
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" lang="en" />
+                  <label class="custom-file-label">Pilih fail</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label"
+                  >Dokumen Syarat Pengajian</label
+                >
+
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" lang="en" />
+                  <label class="custom-file-label">Pilih fail</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button class="btn btn-default" mat-button matStepperNext>
+              Seterusnya
+            </button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="thirdFormGroup">
+        <form [formGroup]="thirdFormGroup">
+          <ng-template matStepLabel> Surat Setuju </ng-template>
+          <div class="row">
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label"
+                  >Tarikh Buka Gabung Cadangan
+                </label>
+
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" lang="en" />
+                  <input
+                    class="form-control"
+                    type="datetime-local"
+                    value="2020-01-01T12:00:00"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label">Pegawai Pengesahan</label>
+
+                <select class="form-control">
+                  <option hidden selected>Sila Pilih</option>
+                  <option value="1">Kumpulan 1</option>
+                  <option value="2">Kumpulan 2</option>
+                  <option value="3">Kumpulan 3</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-xl-6">
+              <div class="form-group">
+                <label class="form-control-label"
+                  >Dokumen Surat Perjanjian</label
+                >
+
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" lang="en" />
+                  <label class="custom-file-label">Pilih fail</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button class="btn btn-danger" mat-button matStepperPrevious>
+              Kembali
+            </button>
+            <button
+              class="btn btn-default"
+              mat-button
+              (click)="successSwalModal('disimpan')"
+            >
+              Simpan
+            </button>
+          </div>
+        </form>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+
+  <div class="modal-footer">
+    <!-- <button
+            class="btn btn-success"
+            type="button"
+            (click)="successSwal('saved')"
+          >
+            Save
+          </button> -->
+
+    <button
+      class="btn btn-outline-danger ml-auto"
+      data-dismiss="modal"
+      type="button"
+      (click)="modalRef.hide()"
+    >
+      Tutup
+    </button>
+  </div>
+</ng-template>

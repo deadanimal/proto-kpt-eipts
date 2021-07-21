@@ -1,0 +1,397 @@
+<div class="header pb-6">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <div class="col-lg-6 col-7">
+          <h6 class="h2 text-dark d-inline-block mb-0">Permohonan</h6>
+
+          <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+              <li class="breadcrumb-item">
+                <a href="javascript:void(0)">
+                  <i class="fas fa-file-invoice-dollar text-dark"> </i>
+                </a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="javascript:void(0)" class="text-dark">
+                  Pengurusan Permit
+                </a>
+              </li>
+              <li aria-current="page" class="breadcrumb-item active">
+                Permohonan
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt--6">
+  <div class="row">
+    <div class="col-xl-8">
+      <div class="card">
+        <div class="card-header bg-secondary">
+          <div class="row align-items-center">
+            <div class="col">
+              <h5 class="h3 m-0">Status: Tahun 2021</h5>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="chart">
+            <div class="amchart" id="chartdivpenggunapermitmohon1"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-4">
+      <div class="card">
+        <div class="card-header bg-secondary">
+          <div class="row align-items-center">
+            <div class="col">
+              <h5 class="h3 m-0">Senarai Tugas</h5>
+            </div>
+          </div>
+        </div>
+        <div class="card-body p-0">
+          <div class="card-body">
+            <ul class="list-group list-group-flush" data-toggle="checklist">
+              <li
+                class="
+                  checklist-entry
+                  list-group-item
+                  flex-column
+                  align-items-start
+                  py-4
+                  px-4
+                "
+              >
+                <div class="checklist-item checklist-item-success">
+                  <div class="checklist-info">
+                    <h5 class="checklist-title mb-0">Kemaskini profil</h5>
+
+                    <small> 10:30 AM </small>
+                  </div>
+
+                  <div>
+                    <div
+                      class="
+                        custom-control custom-checkbox custom-checkbox-success
+                      "
+                    >
+                      <input
+                        checked="checked"
+                        class="custom-control-input"
+                        id="chk-todo-task-1-permit"
+                        type="checkbox"
+                      />
+
+                      <label
+                        class="custom-control-label"
+                        for="chk-todo-task-1-permit"
+                      >
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li
+                class="
+                  checklist-entry
+                  list-group-item
+                  flex-column
+                  align-items-start
+                  py-4
+                  px-4
+                "
+              >
+                <div class="checklist-item checklist-item-warning">
+                  <div class="checklist-info">
+                    <h5 class="checklist-title mb-0">
+                      Kemaskini permohonan institusi
+                    </h5>
+
+                    <small> 10:30 AM </small>
+                  </div>
+
+                  <div>
+                    <div
+                      class="
+                        custom-control custom-checkbox custom-checkbox-warning
+                      "
+                    >
+                      <input
+                        class="custom-control-input"
+                        id="chk-todo-task-2-permit"
+                        type="checkbox"
+                      />
+
+                      <label
+                        class="custom-control-label"
+                        for="chk-todo-task-2-permit"
+                      >
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li
+                class="
+                  checklist-entry
+                  list-group-item
+                  flex-column
+                  align-items-start
+                  py-4
+                  px-4
+                "
+              >
+                <div class="checklist-item checklist-item-info">
+                  <div class="checklist-info">
+                    <h5 class="checklist-title mb-0">
+                      Membuat permohonan baru
+                    </h5>
+
+                    <small> 10:30 AM </small>
+                  </div>
+
+                  <div>
+                    <div
+                      class="
+                        custom-control custom-checkbox custom-checkbox-info
+                      "
+                    >
+                      <input
+                        class="custom-control-input"
+                        id="chk-todo-task-3-permit"
+                        type="checkbox"
+                      />
+
+                      <label
+                        class="custom-control-label"
+                        for="chk-todo-task-3-permit"
+                      >
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-12">
+      <div class="card">
+        <div class="card-header bg-secondary">
+          <div class="row align-items-center">
+            <div class="col">
+              <h5 class="h3 m-0">Permohonan Baharu Permit Mengajar</h5>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-xl-6">
+                <div class="form-group">
+                  <label class="form-control-label">No. Permit</label>
+
+                  <input
+                    class="form-control"
+                    placeholder="Tulis disini..."
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="col-xl-6">
+                <div class="form-group">
+                  <label class="form-control-label">Nama Pemohon</label>
+
+                  <input
+                    class="form-control"
+                    placeholder="Tulis disini..."
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="col-xl-6">
+                <div class="form-group">
+                  <label class="form-control-label">No. Kad Pengenalan</label>
+
+                  <input
+                    class="form-control"
+                    placeholder="111111001111"
+                    type="number"
+                  />
+                </div>
+              </div>
+              <div class="col-xl-6">
+                <div class="form-group">
+                  <label class="form-control-label">Penempatan Mengajar</label>
+
+                  <input
+                    class="form-control"
+                    placeholder="Tulis disini..."
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="col-xl-6">
+                <div class="form-group">
+                  <label class="form-control-label">Maklumat Kesihatan</label>
+
+                  <input
+                    class="form-control"
+                    placeholder="Tulis disini..."
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="col-xl-6">
+                <div class="form-group">
+                  <label class="form-control-label">Status Kelayakan</label>
+
+                  <input
+                    class="form-control"
+                    placeholder="Tulis disini..."
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="col-xl-12 text-right">
+                <button
+                  class="btn btn-success"
+                  (click)="successSwal('disimpan')"
+                >
+                  Simpan
+                </button>
+                <input class="btn btn-danger" type="reset" value="Set Semula" />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-12">
+      <div class="card">
+        <div class="card-header bg-secondary">
+          <div class="row align-items-center">
+            <div class="col">
+              <h5 class="h3 m-0">Permohonan Gantian Permit Mengajar</h5>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-xl-6">
+                <div class="form-group">
+                  <label class="form-control-label">No. Permit</label>
+
+                  <input
+                    class="form-control"
+                    placeholder="Tulis disini..."
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="col-xl-6">
+                <div class="form-group">
+                  <label class="form-control-label">Nama Pemohon</label>
+
+                  <input
+                    class="form-control"
+                    placeholder="Tulis disini..."
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="col-xl-6">
+                <div class="form-group">
+                  <label class="form-control-label">No. Kad Pengenalan</label>
+
+                  <input
+                    class="form-control"
+                    placeholder="111111001111"
+                    type="number"
+                  />
+                </div>
+              </div>
+              <div class="col-xl-6">
+                <div class="form-group">
+                  <label class="form-control-label">Penempatan Mengajar</label>
+
+                  <input
+                    class="form-control"
+                    placeholder="Tulis disini..."
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="col-xl-6">
+                <div class="form-group">
+                  <label class="form-control-label">Maklumat Kesihatan</label>
+
+                  <input
+                    class="form-control"
+                    placeholder="Tulis disini..."
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="col-xl-6">
+                <div class="form-group">
+                  <label class="form-control-label">Status Kelayakan</label>
+
+                  <input
+                    class="form-control"
+                    placeholder="Tulis disini..."
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="col-xl-6">
+                <div class="form-group">
+                  <label class="form-control-label">Tarikh Mula Gantian</label>
+
+                  <input
+                    class="form-control"
+                    placeholder="2020-01-01"
+                    type="date"
+                  />
+                </div>
+              </div>
+              <div class="col-xl-6">
+                <div class="form-group">
+                  <label class="form-control-label">Tarikh Tamat Gantian</label>
+
+                  <input
+                    class="form-control"
+                    placeholder="2020-01-01"
+                    type="date"
+                  />
+                </div>
+              </div>
+              <div class="col-xl-12 text-right">
+                <button
+                  class="btn btn-success"
+                  (click)="successSwal('disimpan')"
+                >
+                  Simpan
+                </button>
+                <input class="btn btn-danger" type="reset" value="Set Semula" />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

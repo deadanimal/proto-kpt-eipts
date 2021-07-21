@@ -1,0 +1,21 @@
+#try-nav {
+  top: 15px;
+  left: 20px;
+  right: 20px;
+  position: fixed;
+  border-radius: 40px;
+  transition: ease 0.5s;
+  padding: 2px;
+  z-index: 9999;
+}
+
+#try-nav.scrolled {
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  border-radius: 0px;
+  transition: ease 0.5s;
+  padding: 4px;
+  z-index: 9999;
+}

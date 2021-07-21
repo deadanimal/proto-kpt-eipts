@@ -1,0 +1,158 @@
+<div class="header pb-6">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <div class="col-lg-6 col-7">
+          <h6 class="h2 text-dark d-inline-block mb-0">Aduan</h6>
+
+          <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+              <li class="breadcrumb-item">
+                <a href="javascript:void(0)">
+                  <i class="fas fa-comments text-dark"> </i>
+                </a>
+              </li>
+              <!-- <li class="breadcrumb-item">
+                  <a href="javascript:void(0)" class="text-dark">
+                    Pengurusan Permit
+                  </a>
+                </li>
+                <li aria-current="page" class="breadcrumb-item active">
+                  Senarai Semak
+                </li> -->
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt--6">
+  <div class="row">
+    <div class="col-xl-12">
+      <div class="card">
+        <div class="card-body">
+          <button
+            class="btn btn-block btn-default btn-lg"
+            type="button"
+            title="Lihat Borang"
+            (click)="openModal(viewrating)"
+          >
+            <span class="btn-inner--icon">
+              <i class="fas fa-file-alt fa-5x"> </i>
+            </span>
+            <br />
+            <br />
+            Borang Aduan
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #viewrating>
+  <div class="modal-header bg-default">
+    <h6 class="modal-title text-white my-auto" id="modal-title-default">
+      Borang Naziran
+    </h6>
+
+    <button
+      aria-label="Close"
+      class="close"
+      data-dismiss="modal"
+      type="button"
+      (click)="modalRef.hide()"
+    >
+      <span aria-hidden="true" class="text-white my-auto"> × </span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-lg-12 mb-3">
+        <!-- <rating
+            [(ngModel)]="rate"
+            [max]="max"
+            [readonly]="isReadonly"
+            (keyup)="confirmSelection($event)"
+            style="color: warning"
+          ></rating> -->
+        <rating
+          class="ml-2"
+          [max]="5"
+          [(ngModel)]="y"
+          [customTemplate]="tt"
+        ></rating>
+        <!-- <div class="card">
+            <pre
+              class="card-block card-header"
+              style="margin: 15px 3"
+            > <b>(<i>Rate:</i> {{y}})</b> </pre>
+          </div> -->
+        <ng-template #tt let-i="index" let-v="value">
+          <button class="btn btn-{{ i < v ? 'warning' : 'secondary' }} ml-3">
+            {{ i < v ? " &#9733; " : " &#9734; " }}
+          </button>
+        </ng-template>
+      </div>
+
+      <div class="col-lg-12">
+        <div class="form-group">
+          <label
+            >Sila nyatakan cadangan tuan/puan untuk penambahbaikan kami di
+            jabatan ini.</label
+          >
+          <textarea
+            class="form-control"
+            placeholder="Tulis disini..."
+            rows="4"
+          ></textarea>
+        </div>
+      </div>
+
+      <div class="col-lg-12">
+        <div class="form-group">
+          <label class="form-control-label">Nama Pemohon</label>
+
+          <input
+            class="form-control"
+            placeholder="Tulis disini..."
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <div class="form-group">
+          <label class="form-control-label">Tarikh Naziran</label>
+
+          <input
+            class="form-control"
+            placeholder="Tulis disini..."
+            type="date"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button
+      class="btn btn-success"
+      type="button"
+      (click)="successSwal('disimpan')"
+    >
+      Simpan
+    </button>
+
+    <button
+      class="btn btn-outline-danger ml-auto"
+      data-dismiss="modal"
+      type="button"
+      (click)="modalRef.hide()"
+    >
+      Tutup
+    </button>
+  </div>
+</ng-template>

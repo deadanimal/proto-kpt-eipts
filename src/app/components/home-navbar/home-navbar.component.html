@@ -1,0 +1,142 @@
+<nav
+  class="
+    navbar navbar-top navbar-expand-sm navbar-dark
+    bg-default
+    border-bottom
+  "
+  id="try-nav"
+  style="height: 4rem"
+>
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-md-0">
+        <li class="nav-item">
+          <a
+            class="ml-0"
+            (click)="goPageMain()"
+            placement="bottom"
+            target="_blank"
+          >
+          <img class="logo-img" [src]="imgLogo" style="width: 50%" />
+
+          <!-- <div class="row">
+            <div class="col">
+              <img class="logo-img" [src]="imgLogo" style="width: 50%" />
+            </div>
+            <div class="col" style="padding: 0 !important;">
+              <h3 class="text-white">
+                Kementerian Pendidikan Tinggi
+              </h3>
+            </div>
+          </div> -->
+            
+          </a>
+        </li>
+      </ul>
+      <!-- Search form -->
+
+      <!-- <form class="navbar-search navbar-search-light form-inline ml-0" id="navbar-search-main">
+				<div class="form-group mb-0" [ngClass]="{ focused: focus === true }">
+					<div class="input-group input-group-alternative input-group-merge">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-search"></i></span>
+						</div>
+						<input 
+							class="form-control" 
+							placeholder="Search" 
+							type="text" 
+							(focus)="focus = true"
+							(blur)="focus = false" 
+						/>
+					</div>
+				</div>
+
+				<button type="button" class="close" (click)="closeSearch()" data-action="search-close"
+					data-target="#navbar-search-main" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+			</form> -->
+
+      <!-- User -->
+      <ul class="navbar-nav align-items-center ml-md-auto mr-md-0">
+        <li class="nav-item dropdown mr-3" dropdown placement="bottom-right">
+          <a class="nav-link pr-0 dropdown-toggle" role="button" dropdownToggle>
+            <div class="media align-items-center">
+              <div class="media-body ml-2 d-none d-lg-block">
+                <span class="mb-0 text-sm text-white font-weight-bold"
+                  >Log Masuk</span
+                >
+              </div>
+              <!-- <div class="media-body ml-2 d-none d-lg-block">
+								<span class="mb-0 text-sm  font-weight-bold">/</span>
+							</div>
+							<div class="media-body ml-2 d-none d-lg-block">
+								<span class="mb-0 text-sm  font-weight-bold">Register</span>
+							</div> -->
+            </div>
+          </a>
+          <div
+            class="dropdown-menu dropdown-menu-arrow dropdown-menu-right"
+            *dropdownMenu
+          >
+            <div class="dropdown-header noti-title">
+              <h6 class="text-overflow m-0">Selamat Datang!</h6>
+            </div>
+            <a class="dropdown-item" (click)="navigatePage('login')">
+              <i class="fas fa-user fa-fw"></i> <span>Pegawai</span>
+            </a>
+            <a class="dropdown-item" (click)="navigatePage('login')">
+              <i class="fas fa-user-tie fa-fw"></i>
+              <span>Pengguna</span>
+            </a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown" dropdown placement="bottom-right">
+          <form
+            class="navbar-search navbar-search-light form-inline ml-0"
+            id="navbar-search-main"
+          >
+            <div
+              class="form-group mb-0"
+              [ngClass]="{ focused: focus === true }"
+            >
+              <div
+                class="input-group input-group-alternative input-group-merge"
+              >
+                <div class="input-group-prepend">
+                  <span class="input-group-text"
+                    ><i class="fas fa-search"></i
+                  ></span>
+                </div>
+                <input
+                  class="form-control"
+                  placeholder="Carian"
+                  type="text"
+                  (focus)="focus = true"
+                  (blur)="focus = false"
+                />
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="close"
+              (click)="closeSearch()"
+              data-action="search-close"
+              data-target="#navbar-search-main"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          </form>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div
+  *ngIf="sidenavOpen === true"
+  class="backdrop d-xl-none"
+  (click)="toggleSidenav()"
+></div>

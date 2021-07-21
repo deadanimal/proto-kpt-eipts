@@ -1,0 +1,359 @@
+<div class="header pb-6">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <div class="col-lg-6 col-7">
+          <h6 class="h2 text-dark d-inline-block mb-0">
+            Pendaftaran Institusi
+          </h6>
+
+          <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+              <li class="breadcrumb-item">
+                <a href="javascript:void(0)">
+                  <i class="fas fa-school text-dark"> </i>
+                </a>
+                <!-- </li>
+              <li class="breadcrumb-item">
+                <a href="javascript:void(0)" class="text-dark">
+                  Ketua Eksekutif
+                </a>
+              </li>
+              <li aria-current="page" class="breadcrumb-item active">
+                Pemakluman
+              </li> -->
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt--6">
+  <div class="row">
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-header bg-secondary">
+          <div class="row align-items-center">
+            <div class="col">
+              <h5 class="h3 m-0">Jumlah Pendaftaran Institusi Ikut Negeri</h5>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="chart">
+            <div class="amchart" id="chartdivpenggunadaftarinstutusi1"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-header bg-secondary">
+          <div class="row align-items-center">
+            <div class="col">
+              <h5 class="h3 m-0">Jumlah Pendaftaran Institusi Ikut Tahunan</h5>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="chart">
+            <div class="amchart" id="chartdivpenggunadaftarinstutusi2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-12">
+      <div class="card">
+        <div class="card-header bg-secondary">
+          <div class="row align-items-center">
+            <div class="col">
+              <h5 class="h3 m-0">Pendaftaran Institusi</h5>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <mat-horizontal-stepper #stepper>
+            <mat-step [stepControl]="firstFormGroup">
+              <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel> Pendaftaran Institusi </ng-template>
+                <!-- <h5 class="h3 mb-3">Part 1</h5> -->
+                <div class="row">
+                  <div class="col-xl-6">
+                    <div class="form-group">
+                      <label class="form-control-label"
+                        >Pendaftaran Baharu Institusi</label
+                      >
+
+                      <input
+                        class="form-control"
+                        placeholder="Tulis disini..."
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="form-group">
+                      <label class="form-control-label"
+                        >Tambah/Ubahsuai/Pindah Premis</label
+                      >
+
+                      <input
+                        class="form-control"
+                        placeholder="Tulis disini..."
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="form-group">
+                      <label class="form-control-label"
+                        >Tukar Nama dan/atau Logo IPTS</label
+                      >
+
+                      <input
+                        class="form-control"
+                        placeholder="Tulis disini..."
+                        type="text"
+                      />
+
+                      <div class="custom-file mt-2">
+                        <input
+                          type="file"
+                          class="custom-file-input"
+                          lang="en"
+                        />
+                        <label class="custom-file-label">Pilih fail</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="form-group">
+                      <label class="form-control-label">Pusat Wilayah</label>
+
+                      <input
+                        class="form-control"
+                        placeholder="Tulis disini..."
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <button class="btn btn-default" mat-button matStepperNext>
+                    Seterusnya
+                  </button>
+                </div>
+              </form>
+            </mat-step>
+
+            <mat-step [stepControl]="secondFormGroup">
+              <form [formGroup]="secondFormGroup">
+                <ng-template matStepLabel>
+                  Pindaan Perakuan Pendaftaran
+                </ng-template>
+                <div class="row">
+                  <div class="col-xl-6">
+                    <div class="form-group">
+                      <label class="form-control-label">Tambah Premis </label>
+
+                      <input
+                        class="form-control"
+                        placeholder="Tulis disini..."
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="form-group">
+                      <label class="form-control-label">Ubahsuai Premis</label>
+
+                      <input
+                        class="form-control"
+                        placeholder="Tulis disini..."
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="form-group">
+                      <label class="form-control-label">Pindah Premis</label>
+
+                      <input
+                        class="form-control"
+                        placeholder="Tulis disini..."
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="form-group">
+                      <label class="form-control-label">Tukar Premis</label>
+
+                      <input
+                        class="form-control"
+                        placeholder="Tulis disini..."
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="form-group">
+                      <label class="form-control-label">Tukar Logo IPTS</label>
+
+                      <div class="custom-file">
+                        <input
+                          type="file"
+                          class="custom-file-input"
+                          lang="en"
+                        />
+                        <label class="custom-file-label">Pilih fail</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="form-group">
+                      <label class="form-control-label">Nama Cawangan</label>
+
+                      <input
+                        class="form-control"
+                        placeholder="Tulis disini..."
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <button class="btn btn-default" mat-button matStepperNext>
+                    Seterusnya
+                  </button>
+                </div>
+              </form>
+            </mat-step>
+
+            <mat-step [stepControl]="thirdFormGroup">
+              <form [formGroup]="thirdFormGroup">
+                <ng-template matStepLabel>
+                  Pembaharuan Perakuan Pendaftaran
+                </ng-template>
+                <div class="row">
+                  <div class="col-xl-6">
+                    <div class="form-group">
+                      <label class="form-control-label"
+                        >No. Rujukan Daftar</label
+                      >
+
+                      <input
+                        class="form-control"
+                        placeholder="Tulis disini..."
+                        type="text"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="form-group">
+                      <label class="form-control-label"
+                        >Tarikh Pembaharuan
+                      </label>
+
+                      <div class="custom-file mt--6">
+                        <input
+                          type="file"
+                          class="custom-file-input"
+                          lang="en"
+                        />
+                        <input
+                          class="form-control"
+                          type="datetime-local"
+                          value="2020-01-01T12:00:00"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="form-group">
+                      <label class="form-control-label"
+                        >Pegawai Pengesahan</label
+                      >
+
+                      <div class="custom-control custom-checkbox">
+                        <input
+                          type="checkbox"
+                          class="custom-control-input input-default"
+                          id="customCheckdaftarinstitusi1"
+                          [checked]="currentlyChecked === check_box_type.ADA"
+                          (click)="selectCheckBox(check_box_type.ADA)"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="customCheckdaftarinstitusi1"
+                          >Ada</label
+                        >
+                      </div>
+
+                      <div class="custom-control custom-checkbox">
+                        <input
+                          type="checkbox"
+                          class="custom-control-input input-default"
+                          id="customCheckdaftarinstitusi2"
+                          [checked]="
+                            currentlyChecked === check_box_type.TIADA
+                          "
+                          (click)="selectCheckBox(check_box_type.TIADA)"
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="customCheckdaftarinstitusi2"
+                          >Tiada</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6">
+                    <div class="form-group">
+                      <label class="form-control-label"
+                        >Dokumen Surat Perjanjian</label
+                      >
+
+                      <div class="custom-file">
+                        <input
+                          type="file"
+                          class="custom-file-input"
+                          lang="en"
+                        />
+                        <label class="custom-file-label">Pilih fail</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-12">
+                    <div class="form-group">
+                      <label class="form-control-label">Ulasan</label>
+
+                      <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <button class="btn btn-danger" mat-button matStepperPrevious>
+                    Kembali
+                  </button>
+                  <button
+                    class="btn btn-default"
+                    mat-button
+                    (click)="successSwal('disimpan')"
+                  >
+                    Simpan
+                  </button>
+                </div>
+              </form>
+            </mat-step>
+          </mat-horizontal-stepper>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
